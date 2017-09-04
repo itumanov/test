@@ -1,0 +1,19 @@
+<app-search-input (onData)="setData($event)" [word]="word"></app-search-input>
+<div class="row">
+  <div class="col-xs-6" *ngIf="definitions && definitions.length">
+    <h4>Definitions</h4>
+    <p class="list-group-item" *ngFor="let definition of definitions">
+      <i><strong>{{definition.partOfSpeech}}</strong></i>: {{definition.definition}}
+    </p>
+  </div>
+  <div class="list-group col-xs-6" *ngIf="synonyms && synonyms.length">
+    <h4>Synonyms</h4>
+    <a href="#"
+       class="list-group-item"
+       *ngFor="let synonym of synonyms"
+       (click)="selectWord($event)">
+      {{synonym}}
+    </a>
+  </div>
+</div>
+

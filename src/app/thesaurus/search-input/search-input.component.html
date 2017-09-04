@@ -1,0 +1,9 @@
+<form [formGroup]="searchForm">
+  <input formControlName="word"
+         type="text"
+         class="form-control"
+         placeholder="Type a word...">
+  <div class="alert alert-danger" [hidden]="!isNotFound">
+    Not found!
+  </div>
+</form>
